@@ -12,7 +12,19 @@ function App() {
         {/* Create Nav and three reacrt routes. One route for path="/" which renders the Home page and
           One route for path='/saved" which renders the Saved  component and
           One route for all the rest of paths which renders the MoMatch page */}
-        {/* YOUR CODE HERE */}
+        <div>
+          <Switch>
+            <Route exact path={["/", "books"]}>
+              <Books></Books>
+            </Route>
+            <Route exact path="/books/id">
+              <Detail></Detail>
+            </Route>
+            <Route>
+              <NoMatch></NoMatch>
+            </Route>
+          </Switch>
+        </div>
       </div>
     </Router>
   );
