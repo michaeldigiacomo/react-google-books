@@ -16,13 +16,13 @@ function App() {
           <Nav />
           <Switch>
             <Route exact path={["/", "books"]}>
-              <Books></Books>
+              <Books />
             </Route>
             <Route exact path="/books/id">
-              <Detail></Detail>
+              <Detail />
             </Route>
             <Route>
-              <NoMatch></NoMatch>
+              <NoMatch />
             </Route>
           </Switch>
         </div>
