@@ -73,9 +73,9 @@ class Home extends Component {
           <Col size="md-12">
             <Card title="Book Search" icon="far fa-book">
               <Form
-                handleInputChange={/* YOUR CODE HERE */}
-                handleFormSubmit={/* YOUR CODE HERE */}
-                q={/* YOUR CODE HERE */}
+                handleInputChange={this.handleInputChange}
+                handleFormSubmit={this.handleFormSubmit}
+                q={this.state.q}
               />
             </Card>
           </Col>
