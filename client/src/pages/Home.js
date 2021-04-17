@@ -87,19 +87,19 @@ class Home extends Component {
                 <List>
                   {this.state.books.map((book) => (
                     <Book
-                      title={book.title}
+                      title={book.volumeInfo.title}
                       key={book.id}
-                      subtitle={book.subtitle}
-                      link={book.infoLink}
-                      authors={book.authors.join(",")}
-                      description={book.description}
-                      picture={book.picture}
+                      subtitle={book.volumeInfo.subtitle}
+                      link={book.volumeInfo.infoLink}
+                      authors={book.VolumeInfo.authors}
+                      description={book.volumeInfo.description}
+                      image={book.volumeInfo.imageLinks.thumbnail}
                       Button={() => (
                         <button
-                          onClick={() => this.handleBookDelete(book._id)}
+                          onClick={() => this.handleBookSave(book._id)}
                           className="btn btn-warning ml-2"
                         >
-                          Delete
+                          Save
                         </button>
                       )}
                     />

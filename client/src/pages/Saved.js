@@ -58,7 +58,7 @@ class Saved extends Component {
                       link={book.infoLink}
                       authors={book.authors.join(",")}
                       description={book.description}
-                      picture={book.picture}
+                      image={book.image}
                       Button={() => (
                         <button
                           onClick={() => this.handleBookDelete(book._id)}
