@@ -48,11 +48,31 @@ class Saved extends Component {
         <Row>
           <Col size="md-12">
             <Card title="Saved Books" icon="download">
-              {/* 
-                Render the books in the array in this.state using the Book component.
-                Each book should have a delete button associate with it.
-                If the array is empty, then disply "No Saved Books" on the web page. */}
-              {/* YOUR CODE IS HERE */}
+              {this.state.books.length ? (
+                <List>
+                  {this.state.books.map((book) => (
+                    <Book
+                      title={book.title}
+                      key={book.id}
+                      subtitle={book.subtitle}
+                      link={book.infoLink}
+                      authors={book.authors.join(",")}
+                      description={book.description}
+                      picture={book.picture}
+                      Button={() => (
+                        <button
+                          onClick={() => this.handleBookDelete(book._id)}
+                          className="btn btn-warning ml-2"
+                        >
+                          Delete
+                        </button>
+                      )}
+                    />
+                  ))}
+                </List>
+              ):(
+                <h3>{this.state.message}</h3>
+              )}
             </Card>
           </Col>
         </Row>
