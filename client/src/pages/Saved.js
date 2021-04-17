@@ -70,7 +70,7 @@ class Saved extends Component {
                     />
                   ))}
                 </List>
-              ):(
+              ) : (
                 <h3>{this.state.message}</h3>
               )}
             </Card>

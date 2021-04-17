@@ -9,23 +9,22 @@ function App() {
   return (
     <Router>
       <div>
-        {/* Create Nav and three reacrt routes. One route for path="/" which renders the Home page and
-          One route for path='/saved" which renders the Saved  component and
-          One route for all the rest of paths which renders the MoMatch page */}
+        <Router>
         <div>
           <Nav />
           <Switch>
-            <Route exact path={["/", "books"]}>
-              <Books />
+            <Route exact path={"/"}>
+              <Home />
             </Route>
-            <Route exact path="/books/id">
-              <Detail />
+            <Route exact path="/saved">
+              <Saved />
             </Route>
             <Route>
               <NoMatch />
             </Route>
           </Switch>
         </div>
+        </Router>
       </div>
     </Router>
   );

@@ -83,7 +83,7 @@ class Home extends Component {
         <Row>
           <Col size="md-12">
             <Card title="Results">
-            {this.state.books.length ? (
+              {this.state.books.length ? (
                 <List>
                   {this.state.books.map((book) => (
                     <Book
@@ -91,7 +91,7 @@ class Home extends Component {
                       key={book.id}
                       subtitle={book.volumeInfo.subtitle}
                       link={book.volumeInfo.infoLink}
-                      authors={book.VolumeInfo.authors}
+                      authors={book.volumeInfo.authors}
                       description={book.volumeInfo.description}
                       image={book.volumeInfo.imageLinks.thumbnail}
                       Button={() => (
@@ -105,7 +105,7 @@ class Home extends Component {
                     />
                   ))}
                 </List>
-              ):(
+              ) : (
                 <h3>{this.state.message}</h3>
               )}
             </Card>
