@@ -83,8 +83,31 @@ class Home extends Component {
         <Row>
           <Col size="md-12">
             <Card title="Results">
-              {/* Render the arrays of books in this.state. If the array is empty, display the message in this.state */}
-              {/* YOUR CODE HERE */}
+            {this.state.books.length ? (
+                <List>
+                  {this.state.books.map((book) => (
+                    <Book
+                      title={book.title}
+                      key={book.id}
+                      subtitle={book.subtitle}
+                      link={book.infoLink}
+                      authors={book.authors.join(",")}
+                      description={book.description}
+                      picture={book.picture}
+                      Button={() => (
+                        <button
+                          onClick={() => this.handleBookDelete(book._id)}
+                          className="btn btn-warning ml-2"
+                        >
+                          Delete
+                        </button>
+                      )}
+                    />
+                  ))}
+                </List>
+              ):(
+                <h3>{this.state.message}</h3>
+              )}
             </Card>
           </Col>
         </Row>
